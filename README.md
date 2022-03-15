@@ -6,7 +6,7 @@ To use all the features of this application it should be run on Windows. The RS2
 
 It can also run on other system if an alternative is found for those 2 applications mentioned above.
 
-##### Requirements
+#### Requirements
 
 - Python
 
@@ -14,7 +14,7 @@ It can also run on other system if an alternative is found for those 2 applicati
 
 - [HW VSP3 - Virtual Serial Port](https://www.hw-group.com/software/hw-vsp3-virtual-serial-port)
 
-##### Required Libraries
+#### Required Libraries
 
 ```python
 pip install PySimpleGUI
