@@ -1,4 +1,4 @@
-#### RS232 & TCP Client/Server
+### RS232 & TCP Client/Server
 
 RS232 & TCP Client/Server is a university project with the scope of working with CSV files,creating graphs, serial ports & tcp. The purpose  of this app is to take Data.csv file and extract the date into different csv files containing specific data like Temperature, Speed etc. Creating graphs from the newly created csv files.  You can print the data inside all the csv files, including Data.csv.  Data can be received from a TCP server and be saved into RS232.csv & data can be sent back to the TCP client. The sent data is taken from a RS232.csv and then displayed on the TCP client 
 
@@ -14,7 +14,7 @@ It can also run on other system if an alternative is found for those 2 applicati
 
 - [HW VSP3 - Virtual Serial Port](https://www.hw-group.com/software/hw-vsp3-virtual-serial-port)
 
-###### Required Libraries
+##### Required Libraries
 
 ```python
 pip install PySimpleGUI
@@ -22,7 +22,7 @@ pip install matplotlib
 pip install pyserial
 ```
 
-#### Setup
+### Setup
 
 1. Open terminal and run `ipconfig` 
 
