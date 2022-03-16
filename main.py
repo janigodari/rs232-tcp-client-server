@@ -282,13 +282,10 @@ while True:
         prezFile = os.path.isfile('./' + prezenta)
         vitFile = os.path.isfile('./' + viteza)
         print("Creating files", end="")
-        time.sleep(1)
-        print(".", end="")
-        time.sleep(1)
-        print(".", end="")
-        time.sleep(1)
-        print(".")
         fileCreate()
+        for i in range(0,3):
+            time.sleep(1)
+            print(".", end="")
 
         if(tempFile == True and umidFile == True and prezFile == True and vitFile == True):
            print("Files: \n" + temperatura + " \n" + umiditate + "\n" + prezenta + "\n" + viteza + "\n Are created")
