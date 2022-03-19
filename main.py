@@ -39,21 +39,17 @@ def fileCreate():
             except Exception as e:
                 pass
 
-            with open (temperatura, 'a', newline='') as csvfile_temp:
-                catalog_write_temp = csv.writer(csvfile_temp, delimiter=',' ,quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                catalog_write_temp.writerow([row[0],row[1],row[2],row[9]])
-
-            with open(umiditate, 'a', newline='') as csvfile_umiditate:
-                catalog_write_umiditate = csv.writer(csvfile_umiditate, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                catalog_write_umiditate.writerow([row[3], row[4], row[5], row[9]])
-
-            with open(prezenta, 'a', newline='') as csvfile_prezenta:
-                catalog_write_prezenta = csv.writer(csvfile_prezenta, delimiter=',', quotechar='|',quoting=csv.QUOTE_MINIMAL)
-                catalog_write_prezenta.writerow([row[7], row[8], row[9]])
-
-            with open(viteza, 'a', newline='') as csvfile_viteza:
-                catalog_write_viteza = csv.writer(csvfile_viteza, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                catalog_write_viteza.writerow([row[6], row[9]])
+            for i in range(0,4):
+                with open(files[i], 'a', newline='') as csvfile:
+                    csv_write = csv.writer(csvfile, delimiter=',' ,quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                    if i == 0:
+                        csv_write.writerow([row[0],row[1],row[2],row[9]])
+                    elif i == 1:
+                        csv_write.writerow([row[3],row[4],row[5],row[9]])
+                    elif i == 2:
+                        csv_write.writerow([row[7],row[8],row[9]])
+                    else:
+                        csv_write.writerow([row[6],row[9]])
 
 def displayData(choice):
     if(choice == 1):
