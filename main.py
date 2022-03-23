@@ -254,8 +254,7 @@ def tryAndCatchError(fileNumber):
 
 
 sg.theme('Material1')
-layout = [  [sg.Text('Filename')], [sg.Input(), sg.FileBrowse()], 
-            [sg.Button("Ok")],
+layout = [  [sg.Text('Filename')], [sg.Input(), sg.FileBrowse()],
             [sg.Text('Create csv files from the main file'), sg.Button("Create")],
             [sg.Text('Print Data: ')],
             [sg.Button('Temperature'), sg.Button('Humidity'),sg.Button('Speed'), sg.Button('Present')],
@@ -270,9 +269,8 @@ while True:
     event, values = window.read()
     if event == sg.WIN_CLOSED:
         break
-    elif event == 'Ok':
-        fileName = values[0]
     elif event == "Create":
+        fileName = values[0]
         tempFile = os.path.isfile('./' + temperatura)
         umidFile = os.path.isfile('./' + umiditate)
         prezFile = os.path.isfile('./' + prezenta)
