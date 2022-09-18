@@ -52,35 +52,28 @@ def fileCreate():
                         csv_write.writerow([row[6],row[9]])
 
 def displayData(choice):
+    with open(fileName, 'r', newline='') as csvfile:
+        catalog_read = csv.reader(csvfile, delimiter=',',quotechar='|')
+
     if(choice == 1):
-        with open(fileName, 'r', newline='') as csvfile:
-            catalog_read = csv.reader(csvfile, delimiter=',',quotechar='|')
-            for row in catalog_read:
-                print("Temperaturi: ", row[0], "," ,row[1], "," ,row[2], " la ora ", row[9])
+        for row in catalog_read:
+            print("Temperaturi: ", row[0], "," ,row[1], "," ,row[2], " la ora ", row[9])
 
     elif(choice == 2):
-        with open(fileName, 'r', newline='') as csvfile:
-            catalog_read = csv.reader(csvfile, delimiter=',',quotechar='|')
-            for row in catalog_read:
-                print("Umiditate : ", row[3], "," ,row[4], "," ,row[5], " la ora ", row[9])
+        for row in catalog_read:
+            print("Umiditate : ", row[3], "," ,row[4], "," ,row[5], " la ora ", row[9])
 
     elif(choice == 3):
-        with open(fileName, 'r', newline='') as csvfile:
-            catalog_read = csv.reader(csvfile, delimiter=',',quotechar='|')
-            for row in catalog_read:
-                print("Viteza  : ", row[6], "la ora ", row[9])
+        for row in catalog_read:
+            print("Viteza  : ", row[6], "la ora ", row[9])
 
     elif(choice == 4):
-         with open(fileName, 'r', newline='') as csvfile:
-            catalog_read = csv.reader(csvfile, delimiter=',',quotechar='|')
-            for row in catalog_read:
-                print("Prezenta  : ", row[7], "," ,row[8])
+        for row in catalog_read:
+            print("Prezenta  : ", row[7], "," ,row[8])
 
     elif(choice == 5):
-        with open(fileName, 'r', newline='') as csvfile:
-            catalog_read = csv.reader(csvfile, delimiter=',',quotechar='|')
-            for row in catalog_read:
-                print(row)
+        for row in catalog_read:
+            print(row)
 
     elif(choice == 6):
        graphDisplay=displayGraphs()
