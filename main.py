@@ -52,41 +52,43 @@ def fileCreate():
                         csv_write.writerow([row[6],row[9]])
 
 def displayData(choice):
-    with open(fileName, 'r', newline='') as csvfile:
-        catalog_read = csv.reader(csvfile, delimiter=',',quotechar='|')
+    if(choice < 6):
+        with open(fileName, 'r', newline='') as csvfile:
+            catalog_read = csv.reader(csvfile, delimiter=',',quotechar='|')
 
-    if(choice == 1):
-        for row in catalog_read:
-            print("Temperaturi: ", row[0], "," ,row[1], "," ,row[2], " la ora ", row[9])
+            if(choice == 1):
+                for row in catalog_read:
+                    print("Temperaturi: ", row[0], "," ,row[1], "," ,row[2], " la ora ", row[9])
 
-    elif(choice == 2):
-        for row in catalog_read:
-            print("Umiditate : ", row[3], "," ,row[4], "," ,row[5], " la ora ", row[9])
+            elif(choice == 2):
+                for row in catalog_read:
+                    print("Umiditate : ", row[3], "," ,row[4], "," ,row[5], " la ora ", row[9])
 
-    elif(choice == 3):
-        for row in catalog_read:
-            print("Viteza  : ", row[6], "la ora ", row[9])
+            elif(choice == 3):
+                for row in catalog_read:
+                    print("Viteza  : ", row[6], "la ora ", row[9])
 
-    elif(choice == 4):
-        for row in catalog_read:
-            print("Prezenta  : ", row[7], "," ,row[8])
+            elif(choice == 4):
+                for row in catalog_read:
+                    print("Prezenta  : ", row[7], "," ,row[8])
 
-    elif(choice == 5):
-        for row in catalog_read:
-            print(row)
+            elif(choice == 5):
+                for row in catalog_read:
+                    print(row)
+    
+    else:
+        if(choice == 6):
+            graphDisplay=displayGraphs()
+            graphDisplay.runGraphs()
 
-    elif(choice == 6):
-       graphDisplay=displayGraphs()
-       graphDisplay.runGraphs()
+        elif(choice == 7):
+            RS232Conncetion()
 
-    elif(choice == 7):
-        RS232Conncetion()
+        elif(choice == 8):
+            RS232DataLog(RS232Conncetion())
 
-    elif(choice == 8):
-        RS232DataLog(RS232Conncetion())
-
-    elif(choice == 9):
-       TcpTransmisson()
+        elif(choice == 9):
+            TcpTransmisson()
     
 class displayGraphs():
     def runGraphs(self):
@@ -277,13 +279,13 @@ while True:
         if(tempFile == True and umidFile == True and prezFile == True and vitFile == True):
            print("Files: \n" + temperatura + " \n" + umiditate + "\n" + prezenta + "\n" + viteza + "\n Are created")
 
-    elif event == "Temperatura":   
+    elif event == "Temperature":   
         tryAndCatchError(1)
-    elif event == "Umiditate":      
+    elif event == "Humidity":      
        tryAndCatchError(2)
-    elif event == "Viteza":      
+    elif event == "Speed":      
        tryAndCatchError(3)
-    elif event == "Prezenta": 
+    elif event == "Present": 
         tryAndCatchError(4)     
     elif event == "Print All Data":      
         tryAndCatchError(5)
